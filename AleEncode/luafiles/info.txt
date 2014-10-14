@@ -1,0 +1,2 @@
+Put one file for the server server.lua then make one for the client client.lua. After you enter the command encodeluafiles 2 tea files will be produced they can only be used with your key file.
+ 
