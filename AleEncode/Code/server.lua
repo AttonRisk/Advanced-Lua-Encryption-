@@ -4,8 +4,10 @@
 --thenuke321@yahoo.com
 --Feel free to edit this script but please do not claim it as yours or profit from it.
 ]]--
+local cryptType = "AES256"
+local mode = "ECBMODE"
 
-local debugMode = false
+local debugMode = true
 -- Global Shit
 local clientName = "client"
 local serverName = "server"
@@ -31,14 +33,14 @@ clientFile = fileOpen("@:AleEncode/luafiles/"..clientName..".lua",true)
 local serverRead = fileRead(serverFile, fileGetSize(serverFile))
 local clientRead = fileRead(clientFile, fileGetSize(clientFile))
 -- Files Made Here
-	if fileCreate(":AleEncode/luafiles/"..clientName..".tea") and fileCreate(":AleEncode/luafiles/"..serverName..".tea") then
-			local wServer = fileOpen (":AleEncode/luafiles/"..serverName..".tea")
-			local wClient = fileOpen (":AleEncode/luafiles/"..clientName..".tea")
+	if fileCreate("@:AleEncode/luafiles/"..clientName..".ale") and fileCreate("@:AleEncode/luafiles/"..serverName..".ale") then
+			local wServer = fileOpen ("@:AleEncode/luafiles/"..serverName..".ale")
+			local wClient = fileOpen ("@:AleEncode/luafiles/"..clientName..".ale")
 
-			local eServer = teaEncode(tostring(serverRead),key)
-			local eClient = teaEncode(tostring(clientRead),key)
-			fileWrite(wServer,base64Decode(eServer))
-			fileWrite(wClient,base64Decode(eClient))
+			local eServer = exports.AleCore:encryptString(key,tostring(serverRead),cryptType,mode)
+			local eClient = exports.AleCore:encryptString(key,tostring(clientRead),cryptType,mode)
+			fileWrite(wServer,eServer)
+			fileWrite(wClient,eClient)
 			fileFlush(wServer)
 			fileFlush(wClient)
 		if serverFile and clientFile and wServer and wClient then

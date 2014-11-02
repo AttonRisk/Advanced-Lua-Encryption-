@@ -1,0 +1,11 @@
+<meta> 
+	<script src="Code/aeslua.lua" type="server" />
+	<script src="Code/aes/buffer.lua" type="server" />
+	<script src="Code/aes/gf.lua" type="server" />
+	<script src="Code/aes/util.lua" type="server" />
+	<script src="Code/aes/aes.lua" type="server" />
+	<script src="Code/aes/ciphermode.lua" type="server" />
+	<script src="Code/AES.lua" type="server" />
+	<export function="encryptString" type="server" />
+	<export function="decryptString" type="server" />
+</meta>
