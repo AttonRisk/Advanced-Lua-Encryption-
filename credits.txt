@@ -1,0 +1,6 @@
+ALE is built to provide a concept of strong encryption rather than using one key for everything.
+I was however lazy and would like to formally apologies to Jusonex for not crediting him.
+http://community.mtasa.com/index.php?p=resources&s=details&id=7282
+His resource was actually made very well and works like a beast. Here is the link to some other guy who made the base frame for Jusonex’s resource https://github.com/bighil/aeslua
+The Advanced Encryption Standard was made by Viencent Rijmen and Joan Daemen.
+
